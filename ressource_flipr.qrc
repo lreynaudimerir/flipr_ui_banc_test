@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/led">
+        <file>../../Desktop/Projet_Flipr/Ressources/Led_Control_Amber.png</file>
+        <file>../../Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</file>
+        <file>../../Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</file>
+    </qresource>
+</RCC>
