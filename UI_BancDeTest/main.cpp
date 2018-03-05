@@ -9,3 +9,8 @@ int main(int argc, char *argv[])
 
     return a.exec();
 }
+
+
+void test_funtion(int test_a){
+    cout>>test_a>>endl;
+}
