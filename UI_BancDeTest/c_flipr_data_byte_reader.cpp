@@ -13,8 +13,7 @@
 *
 ***************************/
 
-c_flipr_data_byte_reader::c_flipr_data_byte_reader(QObject *parent) : QObject(parent)
-{
+c_flipr_data_byte_reader::c_flipr_data_byte_reader(){
 
 }
 
