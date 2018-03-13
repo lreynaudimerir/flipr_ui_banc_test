@@ -37,6 +37,8 @@ QList<QString> c_flipr::f_get_all_flipr_data()
 {
     QList<QString> v_list_flipr_data = QList<QString>();
 
+    return v_list_flipr_data;
+
 }
 
 

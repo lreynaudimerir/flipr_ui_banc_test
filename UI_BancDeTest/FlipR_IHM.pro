@@ -32,14 +32,16 @@ SOURCES += \
     c_sigfox_detection.cpp \
     stdafx.cpp \
     c_flipr.cpp \
-    c_flipr_data_saver.cpp
+    c_flipr_data_saver.cpp \
+    c_flipr_data_byte_reader.cpp
 
 HEADERS += \
         mainwindow.h \
     c_sigfox_detection.h \
     stdafx.h \
     c_flipr.h \
-    c_flipr_data_saver.h
+    c_flipr_data_saver.h \
+    c_flipr_data_byte_reader.h
 
 FORMS += \
         mainwindow.ui
