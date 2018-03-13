@@ -27,7 +27,7 @@
      <item row="0" column="0">
       <widget class="QTabWidget" name="IHM_Controle">
        <property name="currentIndex">
-        <number>0</number>
+        <number>2</number>
        </property>
        <widget class="QWidget" name="Flashage_Carte">
         <attribute name="title">
@@ -94,9 +94,6 @@
          <property name="text">
           <string/>
          </property>
-         <property name="pixmap">
-          <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
-         </property>
         </widget>
         <widget class="QPushButton" name="Button_Connect_Carte">
          <property name="geometry">
@@ -149,11 +146,11 @@
          <property name="text">
           <string/>
          </property>
-         <property name="pixmap">
-          <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
-         </property>
         </widget>
         <widget class="QLabel" name="Led__Controle_Check_Carte">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="geometry">
           <rect>
            <x>240</x>
@@ -164,9 +161,6 @@
          </property>
          <property name="text">
           <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
          </property>
         </widget>
         <widget class="QLabel" name="Led__Controle_Flashage_Carte">
@@ -180,9 +174,6 @@
          </property>
          <property name="text">
           <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
          </property>
         </widget>
        </widget>
@@ -223,7 +214,7 @@
           </rect>
          </property>
          <property name="currentIndex">
-          <number>0</number>
+          <number>4</number>
          </property>
          <property name="tabBarAutoHide">
           <bool>false</bool>
@@ -336,9 +327,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_1_Capteur_LedControl_3">
            <property name="geometry">
@@ -351,9 +339,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
            </property>
           </widget>
           <widget class="QLabel" name="FlipR_1_Capteur_LedControl_2">
@@ -368,9 +353,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_1_Capteur_LedControl_1">
            <property name="geometry">
@@ -383,9 +365,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
            </property>
           </widget>
          </widget>
@@ -497,9 +476,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Amber.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_2_Capteur_LedControl_1">
            <property name="geometry">
@@ -512,9 +488,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Amber.png</pixmap>
            </property>
           </widget>
           <widget class="QLabel" name="FlipR_2_Capteur_LedControl_2">
@@ -529,9 +502,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Amber.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_2_Capteur_LedControl_4">
            <property name="geometry">
@@ -544,9 +514,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Amber.png</pixmap>
            </property>
           </widget>
          </widget>
@@ -658,9 +625,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_3_Capteur_LedControl_2">
            <property name="geometry">
@@ -673,9 +637,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
            </property>
           </widget>
           <widget class="QLabel" name="FlipR_3_Capteur_LedControl_3">
@@ -690,9 +651,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_3_Capteur_LedControl_1">
            <property name="geometry">
@@ -705,9 +663,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
            </property>
           </widget>
          </widget>
@@ -819,9 +774,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_4_Capteur_LedControl_1">
            <property name="geometry">
@@ -834,9 +786,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
            </property>
           </widget>
           <widget class="QLabel" name="FlipR_4_Capteur_LedControl_3">
@@ -851,9 +800,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_4_Capteur_LedControl_2">
            <property name="geometry">
@@ -866,9 +812,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
            </property>
           </widget>
          </widget>
@@ -983,9 +926,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_5_Capteur_LedControl_3">
            <property name="geometry">
@@ -998,9 +938,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
            </property>
           </widget>
           <widget class="QLabel" name="FlipR_5_Capteur_LedControl_1">
@@ -1015,9 +952,6 @@
            <property name="text">
             <string/>
            </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
-           </property>
           </widget>
           <widget class="QLabel" name="FlipR_5_Capteur_LedControl_2">
            <property name="geometry">
@@ -1030,9 +964,6 @@
            </property>
            <property name="text">
             <string/>
-           </property>
-           <property name="pixmap">
-            <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
            </property>
           </widget>
          </widget>
@@ -1142,9 +1073,6 @@
          <property name="text">
           <string/>
          </property>
-         <property name="pixmap">
-          <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Green.png</pixmap>
-         </property>
         </widget>
         <widget class="QLabel" name="Led_Control_">
          <property name="geometry">
@@ -1157,9 +1085,6 @@
          </property>
          <property name="text">
           <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="ressource_flipr.qrc">:/led/Desktop/Projet_Flipr/Ressources/Led_Control_Red.png</pixmap>
          </property>
         </widget>
        </widget>
@@ -1205,7 +1130,7 @@
      <x>0</x>
      <y>0</y>
      <width>792</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1243,8 +1168,6 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="ressource_flipr.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

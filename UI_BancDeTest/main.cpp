@@ -11,6 +11,3 @@ int main(int argc, char *argv[])
 }
 
 
-void test_funtion(int test_a){
-    cout>>test_a>>endl;
-}
