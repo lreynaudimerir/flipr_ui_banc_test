@@ -27,6 +27,7 @@ bool c_flipr_data_saver::f_save_current_flipr_data(QString fileDestination, QStr
     QFile v_file_to_save(fileDestination);
     if (v_file_to_save.open(QIODevice::WriteOnly | QIODevice::Append)) {
 
+        //Peut-être rajouté et vérifier en-tête fichier avec les différentes types (id;temp;etc)
         QTextStream v_out(&v_file_to_save);
         v_out<<v_flipr_data;
 
@@ -50,11 +51,11 @@ QString c_flipr_data_saver::f_get_current_flipr_data_to_csv(c_flipr o_current_fl
 
     v_flipr_data_string.append(o_current_flipr.getV_id_pac() + separator+
                                 o_current_flipr.getV_flirp_temperature() + separator+
-                                o_current_flipr.getV_flipr_conductivity() + separator+
                                 o_current_flipr.getV_flipr_ph() + separator+
                                 o_current_flipr.getV_flipr_redox() + separator+
-                                "BLE is ok = " + o_current_flipr.getV_ble_is_ok() + separator+
-                                "Sigfox is ok = " +o_current_flipr.getV_sigfox_is_ok() + separator+"\n");
+                                o_current_flipr.getV_flipr_conductivity() + separator+
+                                o_current_flipr.getV_ble_is_ok() + separator+
+                                o_current_flipr.getV_sigfox_is_ok() + separator+"\n");
 
 
     return v_flipr_data_string;

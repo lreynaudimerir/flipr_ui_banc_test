@@ -11,8 +11,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = FlipR_IHM
 TEMPLATE = app
 
-PRECOMPILED_HEADER += \
-    stdafx.h
+PRECOMPILED_HEADER +=
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which as been marked as deprecated (the exact warnings
@@ -30,7 +29,6 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     c_sigfox_detection.cpp \
-    stdafx.cpp \
     c_flipr.cpp \
     c_flipr_data_saver.cpp \
     c_flipr_data_byte_reader.cpp
@@ -38,10 +36,10 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     c_sigfox_detection.h \
-    stdafx.h \
     c_flipr.h \
     c_flipr_data_saver.h \
-    c_flipr_data_byte_reader.h
+    c_flipr_data_byte_reader.h \
+    e_mode_flipr_data_reader.h
 
 FORMS += \
         mainwindow.ui
