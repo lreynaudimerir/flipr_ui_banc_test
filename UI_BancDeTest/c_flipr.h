@@ -5,17 +5,23 @@
 
 using namespace std;
 
+///
+/// \brief The c_flipr class
+///
 class c_flipr
 {
 private:
+    //Information carte
     int v_id_pac;
     int v_card_state;
 
-    float v_flipr_temperature;
-    float v_flipr_conductivity;
-    float v_flipr_ph;
-    float v_flipr_redox;
+    //Capteurs
+    double v_flipr_temperature;
+    double v_flipr_conductivity;
+    double v_flipr_ph;
+    double v_flipr_redox;
 
+    //Systèmes de communication
     bool v_ble_is_ok;
     bool v_sigfox_is_ok;
 
@@ -30,14 +36,14 @@ public:
     void setV_card_state(int value);
     int getV_id_pac() const;
     void setV_id_pac(int value);
-    float getV_flipr_temperature() const;
-    void setV_flipr_temperature(float value);
-    float getV_flipr_conductivity() const;
-    void setV_flipr_conductivity(float value);
-    float getV_flipr_ph() const;
-    void setV_flipr_ph(float value);
-    float getV_flipr_redox() const;
-    void setV_flipr_redox(float value);
+    double getV_flipr_temperature() const;
+    void setV_flipr_temperature(double value);
+    double getV_flipr_conductivity() const;
+    void setV_flipr_conductivity(double value);
+    double getV_flipr_ph() const;
+    void setV_flipr_ph(double value);
+    double getV_flipr_redox() const;
+    void setV_flipr_redox(double value);
     bool getV_ble_is_ok() const;
     void setV_ble_is_ok(bool value);
     bool getV_sigfox_is_ok() const;

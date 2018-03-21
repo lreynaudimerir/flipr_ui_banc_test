@@ -13,6 +13,9 @@
 
 using namespace std;
 
+///
+/// \brief The c_flipr_data_saver class
+///
 class c_flipr_data_saver
 {
 private:

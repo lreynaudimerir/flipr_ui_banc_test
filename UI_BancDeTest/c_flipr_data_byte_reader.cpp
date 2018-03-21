@@ -68,24 +68,24 @@ c_flipr c_flipr_data_byte_reader::f_convert_byte_data_to_string(e_mode_flipr_dat
 ///
 int c_flipr_data_byte_reader::f_read_flipr_data(QByteArray* v_array_empty)
 {
-    QSerialPort *o_serialPort;
-//    o_serialPort->setPortName("Flipr");
-//    o_serialPort->setParity(QSerialPort::NoParity);
-//    o_serialPort->setBaudRate(QSerialPort::Baud9600, QSerialPort::AllDirections);
-//    o_serialPort->setStopBits(QSerialPort::OneStop);
-//    o_serialPort->setFlowControl(QSerialPort::NoFlowControl);
-//    o_serialPort->open(QIODevice::ReadWrite);
+    QSerialPort o_serialPort;
+    o_serialPort.setPortName("COM17");
+    o_serialPort.setParity(QSerialPort::NoParity);
+    o_serialPort.setBaudRate(QSerialPort::Baud9600, QSerialPort::AllDirections);
+    o_serialPort.setStopBits(QSerialPort::OneStop);
+    o_serialPort.setFlowControl(QSerialPort::NoFlowControl);
+    o_serialPort.open(QIODevice::ReadWrite);
 
-//    if(o_serialPort->isOpen())
-//    {
-//        QByteArray flipr_data = o_serialPort->readAll();
-//        if(flipr_data.size() == 0)
-//            std::cout << "Flipr data not receive"<<endl;
-//        else
-//        {
-//          //  v_array_empty = &flipr_data;
-//        }
-//    }
+    if(o_serialPort.isOpen())
+    {
+        QByteArray flipr_data = o_serialPort.readAll();
+        if(flipr_data.size() == 0)
+            std::cout << "Flipr data not receive"<<endl;
+        else
+        {
+            v_array_empty = &flipr_data;
+        }
+    }
 
     return 0;
 }
@@ -107,7 +107,6 @@ int c_flipr_data_byte_reader::f_convert_byte_data_for_id_pac(QByteArray v_data_t
     QString v_converted_data = "";
     v_converted_data = v_data_to_convert.toHex();
 
-    //  v_flipr_idpac = v_converted_data.toInt(&ok,10);
     v_flipr_idpac = v_converted_data.toInt(&ok,16);
 
 
@@ -130,7 +129,7 @@ int c_flipr_data_byte_reader::f_convert_byte_data_for_ble_data(QByteArray v_data
         if( v_data_to_convert.mid(index,4).toHex() == this->start_of_flipr_data_by_ble )
         {
             int index_state = index+3;
-            long tmp_data = 0.0f;
+            double tmp_data = 0.0;
             //v_data = v_data_to_convert.mid((index+8,(index+8)+13));
 
             //**Data analyze**//

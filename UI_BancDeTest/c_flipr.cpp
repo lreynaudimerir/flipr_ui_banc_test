@@ -63,42 +63,42 @@ void c_flipr::setV_id_pac(int value)
     v_id_pac = value;
 }
 
-float c_flipr::getV_flipr_temperature() const
+double c_flipr::getV_flipr_temperature() const
 {
     return v_flipr_temperature;
 }
 
-void c_flipr::setV_flipr_temperature(float value)
+void c_flipr::setV_flipr_temperature(double value)
 {
     v_flipr_temperature = value;
 }
 
-float c_flipr::getV_flipr_conductivity() const
+double c_flipr::getV_flipr_conductivity() const
 {
     return v_flipr_conductivity;
 }
 
-void c_flipr::setV_flipr_conductivity(float value)
+void c_flipr::setV_flipr_conductivity(double value)
 {
     v_flipr_conductivity = value;
 }
 
-float c_flipr::getV_flipr_ph() const
+double c_flipr::getV_flipr_ph() const
 {
     return v_flipr_ph;
 }
 
-void c_flipr::setV_flipr_ph(float value)
+void c_flipr::setV_flipr_ph(double value)
 {
     v_flipr_ph = value;
 }
 
-float c_flipr::getV_flipr_redox() const
+double c_flipr::getV_flipr_redox() const
 {
     return v_flipr_redox;
 }
 
-void c_flipr::setV_flipr_redox(float value)
+void c_flipr::setV_flipr_redox(double value)
 {
     v_flipr_redox = value;
 }

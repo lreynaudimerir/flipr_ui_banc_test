@@ -4,7 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += \
+         core gui \
+         serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -47,7 +49,6 @@ FORMS += \
 RESOURCES += \
     ressource_flipr.qrc
 
-DISTFILES += \
-    DYMO.Label.Framework.tlb
+
 
 

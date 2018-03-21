@@ -2,13 +2,10 @@
 #define C_FLIPR_DATA_BYTE_READER_H
 
 #include <iostream>
-#include <cmath>
 
 #include <QObject>
 #include <QThread>
-#include <QtSerialPort/QSerialPort>
-#include <QtSerialPort/QtSerialPort>
-//#include <QtSerialPort/QtSerialPort>
+#include <QSerialPort>
 
 #include "e_mode_flipr_data_reader.h"
 #include "c_flipr.h"
@@ -16,6 +13,9 @@
 
 using namespace std;
 
+///
+/// \brief The c_flipr_data_byte_reader class
+///
 class c_flipr_data_byte_reader
 {
 

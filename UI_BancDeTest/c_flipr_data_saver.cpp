@@ -24,7 +24,7 @@ c_flipr_data_saver::~c_flipr_data_saver()
 ///
 bool c_flipr_data_saver::f_save_current_flipr_data(QString fileDestination, QString v_flipr_data)
 {
-    QFile v_file_to_save(fileDestination);
+    QFile v_file_to_save(fileDestination+".csv");
     if (v_file_to_save.open(QIODevice::WriteOnly | QIODevice::Append)) {
 
         //Peut-être rajouté et vérifier en-tête fichier avec les différentes types (id;temp;etc)
@@ -35,6 +35,9 @@ bool c_flipr_data_saver::f_save_current_flipr_data(QString fileDestination, QStr
 
         return true;
     }
+
+    v_file_to_save.close();
+    delete(&v_file_to_save);
 
     return false;
 }

@@ -17,8 +17,8 @@ int main(int argc, char *argv[])
     test_functions();
     std::cout << "END TEST FUNCTIONS" << std::endl;
 
-//    QApplication a(argc, argv);
-//    MainWindow w;
+    QApplication a(argc, argv);
+    MainWindow w;
 //    w.show();
 
 return 0;
@@ -34,8 +34,6 @@ int print_byte_array(QByteArray trame){
 int test_functions()
 {
 
-    //string data_t = "0x00 0x00 0x03 0xe3 0x02 0x00 0x06 0x76 0xec 0x18 0xc3 0x31 0x0a 0xf1 0xcc 0x99 0x6d 0x5b";
-    //QByteArray trame_test = QByteArray::fromStdString(data_t);
     QByteArray trame_test;
     trame_test[0] = 0x00;
     trame_test[1] = 0x00;
@@ -60,24 +58,6 @@ int test_functions()
     trame_test[20] = 0x1d;
     trame_test[21] = 0xff;
 
-///TWO WAYS TO SPOT
-    if(trame_test[3] == 0xe3){
-        std::cout << "can be see like this" << std::endl;
-    }
-    QString trame_to_hexstring = trame_test.mid(3,2).toHex();
-
-    if(trame_to_hexstring == "e302"){
-        std::cout << "can be see like that" << std::endl;
-    }
-
-//    QByteArray text2 = QByteArray::fromHex("517420697320677265617421");
-//    text2.data();            // returns "Qt is great!"
-
-//    QByteArray text1 = QByteArray::fromHex("e302000676ec18c3310af1cc996d5b");
-//    text1.data();           //return ""
-//    text1.toHex(); //return
-
-
 
     //flipr tested
     c_flipr* current_f = new c_flipr();
@@ -86,9 +66,9 @@ int test_functions()
 
     *current_f = flipr_reader.f_convert_byte_data_to_string(e_mode_flipr_data_reader::GET_DATA_BY_BLE,trame_test);
 
-    //functions_need to be tested
 
     delete(current_f);
+    delete(&flipr_reader);
 
     return 0;
 

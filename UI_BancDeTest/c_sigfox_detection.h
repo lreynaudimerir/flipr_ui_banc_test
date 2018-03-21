@@ -7,6 +7,10 @@
 
 using namespace std;
 
+
+///
+/// \brief The c_sigfox_detection class
+///
 class c_sigfox_detection
 {
 private:

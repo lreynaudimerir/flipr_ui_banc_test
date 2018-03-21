@@ -1,7 +1,9 @@
 #ifndef E_MODE_FLIPR_DATA_READER_H
 #define E_MODE_FLIPR_DATA_READER_H
 
-
+///
+/// \brief The e_mode_flipr_data_reader enum
+///
 enum class e_mode_flipr_data_reader
 {
     GET_ID_PAC = 0,
