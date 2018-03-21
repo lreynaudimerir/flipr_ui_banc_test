@@ -8,7 +8,7 @@ c_flipr::c_flipr()
     this->v_id_pac = 0000;
     this->v_card_state = 0;
 
-    this->v_flirp_temperature = 0.0;
+    this->v_flipr_temperature = 0.0;
     this->v_flipr_conductivity =0.0;
     this->v_flipr_ph = 0.0;
     this->v_flipr_redox= 0.0;
@@ -33,13 +33,13 @@ c_flipr::~c_flipr()
 /// \brief c_flipr::f_get_all_flipr_data
 /// \return A list of QString with data of the Flipr
 ///
-QList<QString> c_flipr::f_get_all_flipr_data()
-{
-    QList<QString> v_list_flipr_data = QList<QString>();
+//QList<QString> c_flipr::f_get_all_flipr_data()
+//{
+//    QList<QString> v_list_flipr_data = QList<QString>();
 
-    return v_list_flipr_data;
+//    return v_list_flipr_data;
 
-}
+//}
 
 
 //Get/Set functions
@@ -63,14 +63,14 @@ void c_flipr::setV_id_pac(int value)
     v_id_pac = value;
 }
 
-float c_flipr::getV_flirp_temperature() const
+float c_flipr::getV_flipr_temperature() const
 {
-    return v_flirp_temperature;
+    return v_flipr_temperature;
 }
 
-void c_flipr::setV_flirp_temperature(float value)
+void c_flipr::setV_flipr_temperature(float value)
 {
-    v_flirp_temperature = value;
+    v_flipr_temperature = value;
 }
 
 float c_flipr::getV_flipr_conductivity() const

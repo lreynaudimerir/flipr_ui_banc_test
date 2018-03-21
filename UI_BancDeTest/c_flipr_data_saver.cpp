@@ -50,7 +50,7 @@ QString c_flipr_data_saver::f_get_current_flipr_data_to_csv(c_flipr o_current_fl
     QString v_flipr_data_string = "";
 
     v_flipr_data_string.append(o_current_flipr.getV_id_pac() + separator+
-                                o_current_flipr.getV_flirp_temperature() + separator+
+                                o_current_flipr.getV_flipr_temperature() + separator+
                                 o_current_flipr.getV_flipr_ph() + separator+
                                 o_current_flipr.getV_flipr_redox() + separator+
                                 o_current_flipr.getV_flipr_conductivity() + separator+

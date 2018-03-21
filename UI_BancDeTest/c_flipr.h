@@ -2,8 +2,6 @@
 #define C_FLIPR_H
 
 #include <iostream>
-#include <QObject>
-
 
 using namespace std;
 
@@ -13,7 +11,7 @@ private:
     int v_id_pac;
     int v_card_state;
 
-    float v_flirp_temperature;
+    float v_flipr_temperature;
     float v_flipr_conductivity;
     float v_flipr_ph;
     float v_flipr_redox;
@@ -25,15 +23,15 @@ public:
     c_flipr();
     ~c_flipr();
 
-    QList<QString> f_get_all_flipr_data();
+    //QList<QString> f_get_all_flipr_data();
 
     //Get/Set functions
     int getV_card_state() const;
     void setV_card_state(int value);
     int getV_id_pac() const;
     void setV_id_pac(int value);
-    float getV_flirp_temperature() const;
-    void setV_flirp_temperature(float value);
+    float getV_flipr_temperature() const;
+    void setV_flipr_temperature(float value);
     float getV_flipr_conductivity() const;
     void setV_flipr_conductivity(float value);
     float getV_flipr_ph() const;
