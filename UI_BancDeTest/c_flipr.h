@@ -12,7 +12,8 @@ class c_flipr
 {
 private:
     //Information carte
-    int v_id_pac;
+    int v_id;
+    int v_pac;
     int v_card_state;
 
     //Capteurs
@@ -20,6 +21,9 @@ private:
     double v_flipr_conductivity;
     double v_flipr_ph;
     double v_flipr_redox;
+
+    //Activation key
+    int v_flipr_activation_key;
 
     //Systèmes de communication
     bool v_ble_is_ok;
@@ -34,8 +38,10 @@ public:
     //Get/Set functions
     int getV_card_state() const;
     void setV_card_state(int value);
-    int getV_id_pac() const;
-    void setV_id_pac(int value);
+    int getV_id() const;
+    void setV_id(int value);
+    int getV_pac() const;
+    void setV_pac(int value);
     double getV_flipr_temperature() const;
     void setV_flipr_temperature(double value);
     double getV_flipr_conductivity() const;
@@ -48,6 +54,8 @@ public:
     void setV_ble_is_ok(bool value);
     bool getV_sigfox_is_ok() const;
     void setV_sigfox_is_ok(bool value);
+    int getV_flipr_activation_key() const;
+    void setV_flipr_activation_key(int value);
 };
 
 #endif // C_FLIPR_H

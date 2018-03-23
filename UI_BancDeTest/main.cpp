@@ -64,7 +64,14 @@ int test_functions()
 
     c_flipr_data_byte_reader flipr_reader;
 
-    *current_f = flipr_reader.f_convert_byte_data_to_string(e_mode_flipr_data_reader::GET_DATA_BY_BLE,trame_test);
+    flipr_reader.f_convert_byte_data_to_string(e_mode_flipr_data_reader::GET_DATA_BY_BLE,trame_test, current_f);
+
+    QByteArray *v_id_pac_getter;
+    QString v_port_name = "COM17";//should use QSerialPortInfo to dtect and choose the correct portName
+    flipr_reader.f_read_flipr_data_on_serial(v_id_pac_getter,v_port_name );
+    flipr_reader.f_convert_byte_data_to_string(e_mode_flipr_data_reader::GET_ID_PAC, *v_id_pac_getter, current_f);
+
+
 
 
     delete(current_f);

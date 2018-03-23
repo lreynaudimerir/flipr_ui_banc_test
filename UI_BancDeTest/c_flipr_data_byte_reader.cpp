@@ -34,42 +34,49 @@ c_flipr_data_byte_reader::~c_flipr_data_byte_reader()
 /// \brief c_flipr_data_byte_reader::f_convert_byte_data_to_string :
 /// \param v_mode : A enum to select the mode to convert the data
 /// \param v_data_to_convert : A QByteArray which contain flipr data and will be converted
-/// \return A c_flipr with the data got from the selected mode
+/// \return A interger 0 = succes, 1 = error
 ///
-c_flipr c_flipr_data_byte_reader::f_convert_byte_data_to_string(e_mode_flipr_data_reader v_mode, QByteArray v_data_to_convert)
+int c_flipr_data_byte_reader::f_convert_byte_data_to_string(e_mode_flipr_data_reader v_mode, QByteArray v_data_to_convert, c_flipr *o_current_flipr_tested)
 {
-    c_flipr* o_current_flipr_tested = new c_flipr();
-
 
     if(v_mode == e_mode_flipr_data_reader::GET_ID_PAC)
     {
-        o_current_flipr_tested->setV_id_pac(f_convert_byte_data_for_id_pac(v_data_to_convert));
+        f_convert_byte_data_for_id_pac(v_data_to_convert, o_current_flipr_tested);
+        return 0;
     }
 
     if(v_mode == e_mode_flipr_data_reader::GET_DATA_BY_BLE)
     {
 
         f_convert_byte_data_for_ble_data(v_data_to_convert, o_current_flipr_tested);
-        return *o_current_flipr_tested;
+        return 0;
     }
 
     if(v_mode == e_mode_flipr_data_reader::GET_DATA_BY_SIGFOX)
     {
-        return *o_current_flipr_tested;
+        return 0;
     }
 
-    return *o_current_flipr_tested;
+    return 1;
 }
 
 ///
 /// [WIP]
-/// \brief c_flipr_data_byte_reader::f_read_flipr_data
+/// \brief c_flipr_data_byte_reader::f_read_flipr_data_on_serial
+/// \param v_array_empty
+/// \param v_port_name
 /// \return
 ///
-int c_flipr_data_byte_reader::f_read_flipr_data(QByteArray* v_array_empty)
+int c_flipr_data_byte_reader::f_read_flipr_data_on_serial(QByteArray* v_array_empty, QString v_port_name)
 {
+
+    //AT$I=11 : 41 54 24 49 3d 31 31
+    //AT$I=10 : 41 54 24 49 3d 31 30
+    QByteArray v_id_request = {"AT$I=11"};
+    QByteArray v_pac_request = {"AT$I=10"};
+
     QSerialPort o_serialPort;
-    o_serialPort.setPortName("COM17");
+    o_serialPort.setPortName(v_port_name);
     o_serialPort.setParity(QSerialPort::NoParity);
     o_serialPort.setBaudRate(QSerialPort::Baud9600, QSerialPort::AllDirections);
     o_serialPort.setStopBits(QSerialPort::OneStop);
@@ -78,13 +85,62 @@ int c_flipr_data_byte_reader::f_read_flipr_data(QByteArray* v_array_empty)
 
     if(o_serialPort.isOpen())
     {
-        QByteArray flipr_data = o_serialPort.readAll();
-        if(flipr_data.size() == 0)
-            std::cout << "Flipr data not receive"<<endl;
+
+        //ID
+        //write
+        o_serialPort.write(v_id_request.data());
+        if( (o_serialPort.waitForBytesWritten(2000)))
+        {
+        }
         else
         {
-            v_array_empty = &flipr_data;
+            std::cout << "ERROR : request not send" << std::endl;
         }
+        //read
+        if (o_serialPort.waitForReadyRead(2000))
+        {
+            QByteArray flipr_id = o_serialPort.readAll();
+            while (o_serialPort.waitForReadyRead(10))
+            {
+                flipr_id += o_serialPort.readAll();
+            }
+            v_array_empty = &flipr_id;
+        }
+        else
+        {
+            std::cout << "Flipr ID/PAC data not receive"<<endl;
+            return 1;
+        }
+
+
+        //PAC
+        //write
+        o_serialPort.write(v_pac_request.data());
+        if( (o_serialPort.waitForBytesWritten(2000)))
+        {
+        }
+        else
+        {
+            std::cout << "ERROR : request not send" << std::endl;
+        }
+        //read
+        if (o_serialPort.waitForReadyRead(2000))
+        {
+            QByteArray flipr_pac = o_serialPort.readAll();
+            while (o_serialPort.waitForReadyRead(10))
+            {
+                flipr_pac += o_serialPort.readAll();
+            }
+            v_array_empty->append(':');
+            v_array_empty->append(flipr_pac);
+
+        }
+        else
+        {
+            std::cout << "Flipr ID/PAC data not receive"<<endl;
+            return 1;
+        }
+
     }
 
     return 0;
@@ -95,25 +151,41 @@ int c_flipr_data_byte_reader::f_read_flipr_data(QByteArray* v_array_empty)
 ///
 /// \brief c_flipr_data_byte_reader::f_convert_byte_data_for_id_pac A function which returns the ID/PAC of a flipr in a int
 /// \param v_data_to_convert the byte array get from the request of id/pac
-/// \return Integer with the ID/PAC of a flipr
+/// \return Integer 0 or 1; 0 = success, 1 = error
 ///
-int c_flipr_data_byte_reader::f_convert_byte_data_for_id_pac(QByteArray v_data_to_convert)
+int c_flipr_data_byte_reader::f_convert_byte_data_for_id_pac(QByteArray v_data_to_convert, c_flipr *o_current_flipr)
 {
 
     //traitement trame ?
     //si vide -> Erreur application  ?
-    int v_flipr_idpac = 0;
+    int v_flipr_id = 0;
+    int v_flipr_pac = 0;
     bool ok;
     QString v_converted_data = "";
-    v_converted_data = v_data_to_convert.toHex();
 
-    v_flipr_idpac = v_converted_data.toInt(&ok,16);
+    int index = 0;
+    while(v_data_to_convert.data()[index] != ':')
+    {
+        index++;
+    }
 
+    v_converted_data = v_data_to_convert.mid(0,index).toHex();
+    v_flipr_id = v_converted_data.toInt(&ok,16);
+    o_current_flipr->setV_id(v_flipr_id);
 
-    return v_flipr_idpac;
+    v_converted_data = v_data_to_convert.mid(index,v_data_to_convert.length()).toHex();
+    v_flipr_pac = v_converted_data.toInt(&ok,16);
+    o_current_flipr->setV_pac(v_flipr_pac);
+
+    return 0;
 }
 
-
+///
+/// \brief c_flipr_data_byte_reader::f_convert_byte_data_for_ble_data
+/// \param v_data_to_convert
+/// \param o_current_flipr
+/// \return
+///
 int c_flipr_data_byte_reader::f_convert_byte_data_for_ble_data(QByteArray v_data_to_convert, c_flipr* o_current_flipr)
 {
     QString v_byte_temp;
@@ -164,7 +236,7 @@ int c_flipr_data_byte_reader::f_convert_byte_data_for_ble_data(QByteArray v_data
             //bytes 10+11 -> 11+10 -> b10 -> id
             v_byte_temp = v_data_to_convert.mid(index_state+11,1).toHex()+v_data_to_convert.mid(index_state+10,1).toHex();
             tmp_data = v_byte_temp.toLong(&ok,16);
-            o_current_flipr->setV_id_pac(tmp_data);
+            o_current_flipr->setV_id(tmp_data);
 
             //bytes 12+13 -> 13+12 -> b10 ->battery
             v_byte_temp = v_data_to_convert.mid(index_state+13,1).toHex()+v_data_to_convert.mid(index_state+12,1).toHex();
@@ -181,9 +253,12 @@ int c_flipr_data_byte_reader::f_convert_byte_data_for_ble_data(QByteArray v_data
     return 1;
 }
 
+///
+/// Currently not implemented in the app
+/// \brief c_flipr_data_byte_reader::f_convert_byte_data_for_sigfox_data
+/// \param v_data_to_convert
+/// \param o_current_flipr
+/// \return A Int : 0 if success, 1 else
+///
 
-int c_flipr_data_byte_reader::f_convert_byte_data_for_sigfox_data(QByteArray v_data_to_convert, c_flipr* o_current_flipr)
-{
-     return 1;
-}
 
