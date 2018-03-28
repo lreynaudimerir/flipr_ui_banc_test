@@ -49,6 +49,8 @@ FORMS += \
 RESOURCES += \
     ressource_flipr.qrc
 
+DISTFILES +=
+
 
 
 

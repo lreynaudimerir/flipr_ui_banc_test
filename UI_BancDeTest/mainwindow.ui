@@ -27,156 +27,8 @@
      <item row="0" column="0">
       <widget class="QTabWidget" name="IHM_Controle">
        <property name="currentIndex">
-        <number>2</number>
+        <number>0</number>
        </property>
-       <widget class="QWidget" name="Flashage_Carte">
-        <attribute name="title">
-         <string>FlashageCarte</string>
-        </attribute>
-        <widget class="QListView" name="Flashage_List">
-         <property name="geometry">
-          <rect>
-           <x>360</x>
-           <y>20</y>
-           <width>401</width>
-           <height>401</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Button_Refresh_Carte">
-         <property name="geometry">
-          <rect>
-           <x>450</x>
-           <y>430</y>
-           <width>201</width>
-           <height>71</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Rafraichir</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Button_Flashage_Carte">
-         <property name="geometry">
-          <rect>
-           <x>90</x>
-           <y>400</y>
-           <width>201</width>
-           <height>71</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Flashage de la carte</string>
-         </property>
-        </widget>
-        <widget class="QProgressBar" name="Progress_Flashage">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>520</y>
-           <width>641</width>
-           <height>23</height>
-          </rect>
-         </property>
-         <property name="value">
-          <number>24</number>
-         </property>
-        </widget>
-        <widget class="QLabel" name="Led__Controle_Connect_Carte">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>90</y>
-           <width>51</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Button_Connect_Carte">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>100</y>
-           <width>171</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Connection de la carte</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Button_File_Carte">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>180</y>
-           <width>171</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Chargement fichier de flashage</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Button_Check_Carte">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>260</y>
-           <width>171</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Verification</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="Led__Controle_File_Carte">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>170</y>
-           <width>51</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="Led__Controle_Check_Carte">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>250</y>
-           <width>51</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="Led__Controle_Flashage_Carte">
-         <property name="geometry">
-          <rect>
-           <x>700</x>
-           <y>490</y>
-           <width>51</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </widget>
        <widget class="QWidget" name="Capteur">
         <attribute name="title">
          <string>Capteur</string>
@@ -194,8 +46,8 @@
         <widget class="QPushButton" name="Button_Test_Capteur">
          <property name="geometry">
           <rect>
-           <x>450</x>
-           <y>470</y>
+           <x>430</x>
+           <y>330</y>
            <width>141</width>
            <height>51</height>
           </rect>
@@ -209,12 +61,12 @@
           <rect>
            <x>270</x>
            <y>40</y>
-           <width>491</width>
-           <height>411</height>
+           <width>471</width>
+           <height>281</height>
           </rect>
          </property>
          <property name="currentIndex">
-          <number>4</number>
+          <number>0</number>
          </property>
          <property name="tabBarAutoHide">
           <bool>false</bool>
@@ -995,99 +847,6 @@
          </property>
         </widget>
        </widget>
-       <widget class="QWidget" name="Communication">
-        <attribute name="title">
-         <string>Communication</string>
-        </attribute>
-        <widget class="QLabel" name="Com_BLE_Label">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>280</y>
-           <width>101</width>
-           <height>61</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Communication BLE</string>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Button_Test_BLE">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>20</y>
-           <width>161</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Test BLE</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="Com_Sigfox_Label">
-         <property name="geometry">
-          <rect>
-           <x>460</x>
-           <y>490</y>
-           <width>41</width>
-           <height>31</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Sigfox</string>
-         </property>
-        </widget>
-        <widget class="QOpenGLWidget" name="Sigfox_Graph">
-         <property name="geometry">
-          <rect>
-           <x>320</x>
-           <y>90</y>
-           <width>431</width>
-           <height>381</height>
-          </rect>
-         </property>
-        </widget>
-        <widget class="QPushButton" name="Button_Test_Sigfox">
-         <property name="geometry">
-          <rect>
-           <x>450</x>
-           <y>20</y>
-           <width>151</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>Test SigFox</string>
-         </property>
-        </widget>
-        <widget class="QLabel" name="Led_Control_BLE">
-         <property name="geometry">
-          <rect>
-           <x>180</x>
-           <y>280</y>
-           <width>51</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-        <widget class="QLabel" name="Led_Control_">
-         <property name="geometry">
-          <rect>
-           <x>530</x>
-           <y>480</y>
-           <width>51</width>
-           <height>51</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-        </widget>
-       </widget>
        <widget class="QWidget" name="Etiquette">
         <attribute name="title">
          <string>Etiquette</string>
@@ -1095,8 +854,8 @@
         <widget class="QPushButton" name="Button_Recuperation_ID">
          <property name="geometry">
           <rect>
-           <x>20</x>
-           <y>10</y>
+           <x>40</x>
+           <y>70</y>
            <width>111</width>
            <height>41</height>
           </rect>
@@ -1108,14 +867,40 @@
         <widget class="QPushButton" name="Button_Impression">
          <property name="geometry">
           <rect>
-           <x>540</x>
-           <y>460</y>
+           <x>40</x>
+           <y>260</y>
            <width>231</width>
            <height>81</height>
           </rect>
          </property>
          <property name="text">
           <string>Impression</string>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>50</y>
+           <width>311</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
+         </property>
+        </widget>
+        <widget class="QTextEdit" name="textEdit_2">
+         <property name="geometry">
+          <rect>
+           <x>190</x>
+           <y>100</y>
+           <width>311</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <property name="readOnly">
+          <bool>true</bool>
          </property>
         </widget>
        </widget>
@@ -1130,7 +915,7 @@
      <x>0</x>
      <y>0</y>
      <width>792</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
